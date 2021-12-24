@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+[![Build Status](https://travis-ci.org/Automattic/test.svg?branch=master)](https://travis-ci.org/Automattic/test)
 
 Underscores custom theme
 ===
@@ -10,7 +10,7 @@ Installation
 
 ### Requirements
 
-`_s` requires the following dependencies:
+`test` requires the following dependencies:
 
 - [Node.js](https://nodejs.org/)
 - [Composer](https://getcomposer.org/)
@@ -23,7 +23,7 @@ Clone or download this repository, change its name to something else (like, say,
 
 ### Setup
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+To start using all the tools that come with `test`  you need to install the necessary Node.js and Composer dependencies :
 
 ```sh
 $ composer install
@@ -32,7 +32,7 @@ $ npm install
 
 ### Available CLI commands
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+`test` comes packed with CLI commands tailored for WordPress theme development :
 
 - `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
 - `composer lint:php` : checks all PHP files for syntax errors.
