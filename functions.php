@@ -27,7 +27,7 @@ add_theme_support('post-thumbnails');
 // This theme uses wp_nav_menu() in one location.
 register_nav_menus(
     array(
-        'menu-1' => esc_html__('Primary', 'test'),
+        'primary' => esc_html__('Primary', 'test'),
     )
 );
 
@@ -89,6 +89,8 @@ function disable_gutenberg_wp_enqueue_scripts() {
 }
 add_filter('wp_enqueue_scripts', 'disable_gutenberg_wp_enqueue_scripts', 100);
 
+add_filter( 'wp_enqueue_scripts', 'disable_gutenberg_wp_enqueue_scripts', 100 );
+
 // Disable the emoji's
 function disable_emojis() {
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -102,13 +104,10 @@ function disable_emojis() {
     // Remove from TinyMCE
     add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
 }
+
 add_action( 'init', 'disable_emojis' );
 
-// Filter out the tinymce emoji plugin
-function disable_emojis_tinymce( $plugins ) {
-    if ( is_array( $plugins ) ) {
-        return array_diff( $plugins, array( 'wpemoji' ) );
-    } else {
-        return array();
-    }
+function my_deregister_scripts(){
+    wp_deregister_script( 'wp-embed' );
 }
+add_action( 'wp_footer', 'my_deregister_scripts' );
